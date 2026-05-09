@@ -1,5 +1,5 @@
 # AMP_mjlab
-
+python scripts/train.py Unitree-G1-AMP-Flat --env.scene.num-envs=4096
 [English README](README.md)
 
 部署集成代码位于 [ccrpRepo/wbc_fsm](https://github.com/ccrpRepo/wbc_fsm) 项目中的 `MJAmp State`。
@@ -8,7 +8,7 @@
 
 本项目的核心特点是：
 
-- 使用同一个 policy 同时学习 locomotion（走/跑）与 recovery（跌倒恢复）
+- 使用同一个 policy 同时学习 locomotion（走/跑）与 recovery（跌倒恢复）python scripts/train.py Unitree-G1-AMP-Flat --env.scene.num-envs=4096python scripts/train.py Unitree-G1-AMP-Flat --env.scene.num-envs=4096
 - 通过 AMP 判别器约束动作风格与运动先验
 - 在训练与导出链路中保持一致，支持直接导出 ONNX policy
 
@@ -57,7 +57,7 @@ python -m pip install -e .
 
 补丁文件：
 
-- `mjlab_patch/mjlab/managers/observation_manager.py`
+- `mjlab_patch/mjlab/managers/observation_manager.py`python scripts/train.py Unitree-G1-AMP-Flat --env.scene.num-envs=4096
 
 示例覆盖命令：
 
@@ -143,3 +143,11 @@ python scripts/csv_to_npz.py --help
 
 - 感谢 [unitreerobotics/unitree_rl_mjlab](https://github.com/unitreerobotics/unitree_rl_mjlab) 项目的开源工作与启发。
 - 感谢 [Open-X-Humanoid/TienKung-Lab](https://github.com/Open-X-Humanoid/TienKung-Lab)，本项目在 rsl_rl 的 AMP 部分参考了该实现。
+
+
+UV环境配置
+uv venv 
+source .venv/bin/activate
+uv pip intall -e .
+cd rsl_rl 
+uv pip install .
